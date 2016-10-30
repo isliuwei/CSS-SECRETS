@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>background-position</title>
+    <style>
+        #demo{
+            color: #fff;
+            font-size: 20px;
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+            margin: 20px 0;
+            background: url('code-pirate.svg') no-repeat #58a 140px 40px;
+            background-position: right 10px bottom 10px;
+
+        }
+
+
+        #padding-box{
+            color: #fff;
+            font-size: 14px;
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 10px solid rgb(102,85,85);
+            background: url('code-pirate.svg') no-repeat rgb(85,136,170) 140px 40px;
+            background-position: right 10px bottom 10px;
+            background-origin: padding-box;
+        }
+
+        #content-box{
+            color: #fff;
+            font-size: 14px;
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 10px solid rgb(102,85,85);
+            background: url('code-pirate.svg') no-repeat rgb(85,136,170) 140px 40px;
+            background-position: right 10px bottom 10px;
+            background-origin: content-box;
+        }
+
+        #border-box{
+            color: #fff;
+            font-size: 14px;
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 10px solid rgb(102,85,85);
+            background: url('code-pirate.svg') no-repeat rgb(85,136,170) 140px 40px;
+            background-position: right 10px bottom 10px;
+            background-origin: border-box;
+        }
+        #calc{
+            color: #fff;
+            font-size: 14px;
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 10px solid rgb(102,85,85);
+            background: url('code-pirate.svg') no-repeat rgb(85,136,170);
+            background-position: calc(100% - 20px) calc(100% - 20px);
+            background-origin: padding-box;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="demo">Code Pirate</div>
+
+    <div id="padding-box">background-position 默认是相对 padding-box</div>
+    <div id="content-box">background-origin: content-box</div>
+    <div id="border-box">background-origin: border-box</div>
+    <div id="calc">background-position: calc(100% - 20px) calc(100% - 20px)</div>
+
+
+</body>
+</html>

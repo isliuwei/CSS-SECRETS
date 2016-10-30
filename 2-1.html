@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>background-clip</title>
+    <style>
+        #bg{
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            margin: 20px;
+            border: 10px dotted rgba(0,255,0,1);
+            background: red;
+            background-clip: border-box;
+        }
+        #bg1{
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            margin: 20px;
+            border: 10px dotted rgba(0,255,0,1);
+            background: red;
+            background-clip: padding-box;
+        }
+        #bg2{
+            width: 200px;
+            height: 100px;
+            padding: 20px;
+            margin: 20px;
+            border: 10px dotted rgba(0,255,0,1);
+            background: red;
+            background-clip: content-box;
+        }
+        #demo{
+            position: relative;
+            height: 900px;
+            background: url('http://csssecrets.io/images/stone-art.jpg');
+        }
+        #padding-box{
+             position: absolute;
+             top: 5em;
+             left: 10em;
+             max-width: 20em;
+             padding: 2em;
+             margin: 2em auto 0;
+             font: 100%/1.5 sans-serif;
+
+             border: 10px solid hsla(0,0%,100%,0.5);
+             background: white;
+             background-clip: padding-box;
+         }
+
+        #content-box{
+            position: absolute;
+            top: 20em;
+            left: 10em;
+            max-width: 20em;
+            padding: 2em;
+            margin: 2em auto 0;
+            font: 100%/1.5 sans-serif;
+
+            border: 10px solid hsla(0,0%,100%,0.5);
+            background: white;
+            background-clip: content-box;
+        }
+
+        #default{
+            position: absolute;
+            top: 35em;
+            left: 10em;
+            max-width: 20em;
+            padding: 2em;
+            margin: 2em auto 0;
+            font: 100%/1.5 sans-serif;
+
+            border: 10px solid hsla(0,0%,100%,0.5);
+            background: white;
+            background-clip: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div id="bg">background-clip: border-box;</div>
+    <div id="bg1">background-clip: padding-box;</div>
+    <div id="bg2">background-clip: content-box;</div>
+
+    <div id="demo">
+        <div id="padding-box">
+            Can I haz semi-transparent borders? Pretty please? I am background-clip: padding-box
+        </div>
+
+        <div id="content-box">
+            Can I haz semi-transparent borders? Pretty please? I am background-clip: content-box
+        </div>
+
+        <div id="default">
+            Can I haz semi-transparent borders? Pretty please? I am background-clip: border-box default
+        </div>
+    </div>
+
+</body>
+</html>

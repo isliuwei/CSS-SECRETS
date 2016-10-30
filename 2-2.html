@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>box-shadow</title>
+    <style>
+        #bg{
+            width: 200px;
+            height: 100px;
+            background: yellowgreen;
+            box-shadow: 0 0 0 10px #655;
+        }
+
+        #multiple-shadow{
+            width: 200px;
+            height: 100px;
+            background: yellowgreen;
+            box-shadow: 0 0 0 10px #655,
+                        0 0 0 15px deeppink,
+                        5px 5px 5px 15px rgba(0,0,0,0.6);
+
+        }
+        #outline{
+            width: 200px;
+            height: 100px;
+            border-radius: 10px;
+            background: #655;
+            outline: 1px dashed #fff;
+            outline-offset: -15px;
+
+        }
+        #outline-bug{
+            width: 200px;
+            height: 100px;
+            border-radius: 15px;
+            background: yellowgreen;
+            outline: 3px solid #655;
+        }
+    </style>
+</head>
+<body>
+    <div id="bg"></div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+    <div id="multiple-shadow"></div>
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div id="outline"></div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div id="outline-bug"></div>
+
+</body>
+</html>
