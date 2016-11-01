@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.inputFileWrapper{
+			height: 50px;
+		}
+		.inputFileWrapper label{
+			display: block;
+			float: left;
+			position: relative;
+		}
+		.inputFileWrapper input[type="file"]{
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			clip:rect(0,0,0,0);
+		}
+		.inputFileWrapper .custorm-style{
+			display: block;
+			width: 390px;
+			height: 50px;
+		}
+		.inputFileWrapper .custorm-style .left-button{
+			width: 80px;
+			line-height: 50px;
+			background: #008ac7;
+			color: #fff;
+			display: block;
+			text-align: center;
+			float: left;
+		}
+		.inputFileWrapper .custorm-style .right-text{
+			width: 300px;
+			height: 40px;
+			line-height: 50px;
+			display: block;
+			float: right;
+			padding: 4px;
+			border: 1px solid #008ac7;
+			overflow: hidden;
+			-ms-text-overflow: ellipsis;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		#imgView{
+			margin-top: 20px;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="inputFileWrapper">
+		<label for="file">
+			<input type="file" id="file"/>
+        	<span class="custorm-style">
+            <span class="left-button">上传图片</span>
+            <span class="right-text" id="rightText"></span>
+        </span>
+		</label>
+	</div>
+
+
+
+	<div id="imgView"></div>
+
+
+<script>
+$fileInput = document.querySelector('#file');
+$imgView = document.querySelector('#imgView');
+$rightText = document.querySelector('.right-text');
+
+
+$fileInput.addEventListener('change',function(e){
+
+	var $fileObj = e.target.files[0];
+	var reader = new FileReader();
+	reader.readAsDataURL($fileObj);//转换成 base64
+	reader.onload = function(e){
+		console.log(this.result);//该图片的base64编码
+		$imgView.innerHTML = '<img src="'+this.result+'"/>';
+		$rightText.innerHTML = $fileObj.name;
+	};
+
+},false);
+
+</script>
+
+</body>
+</html>
